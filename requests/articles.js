@@ -1,12 +1,12 @@
 import axios from 'axios';
 const API_URL = 'http://localhost:4000';
 
-export function allArticles(token) {
+export function allArticles(params, token) {
   return axios({
     method: 'get',
     url: API_URL + '/api/articles',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': `Bearer ${token}`},
-    data: {},
+    params: {...params},
   });
 }
 
