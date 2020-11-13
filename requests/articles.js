@@ -10,6 +10,15 @@ export function allArticles(token) {
   });
 }
 
+export function lastArticles(token) {
+  return axios({
+    method: 'get',
+    url: API_URL + '/api/articles/last_articles',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': `Bearer ${token}`},
+    data: {},
+  });
+}
+
 export function showArticle(id, token) {
   return axios({
     method: 'get',

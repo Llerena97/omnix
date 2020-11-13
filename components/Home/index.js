@@ -1,6 +1,7 @@
 import React from 'react';
 
-const BodyHome = () => {
+const BodyHome = props => {
+  const {articles} = props
   return (
     <>
       <div className="main">
