@@ -27,7 +27,7 @@ const ShowArticle = (props) => {
         }
         .main img {
           width: 100%;
-          height: 12rem;
+          height: 15rem;
           object-fit: cover;
         }
         .main h3 {

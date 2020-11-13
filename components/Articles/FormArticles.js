@@ -46,6 +46,10 @@ const FormArticles = props => {
       shortDescription,
       largeDescription
     }
+    // Temporary validation --
+    let validation = Object.values(params).map(e => e ? true : false)
+    if (validation.includes(false)) return alert('Todos los campos son requeridos')
+    // --
     if (!article) {
       try {
         let response = await createArticle({article: params}, token)
@@ -75,11 +79,11 @@ const FormArticles = props => {
         <div className="cont-form">
           <div className="box-form">
             <label>Titulo</label>
-            <input type="text" value={title} onChange={e => setTitle(e.target.value)} />
+            <input type="text" value={title} maxLength="70" onChange={e => setTitle(e.target.value)} />
           </div>
           <div className="box-form">
             <label>Descripcion breve</label>
-            <textarea rows="2" maxLength="150" value={shortDescription} onChange={e => setShortDescription(e.target.value)}></textarea>
+            <textarea rows="2" maxLength="160" value={shortDescription} onChange={e => setShortDescription(e.target.value)}></textarea>
           </div>
           <div className="box-form">
             <label>Descripcion completa</label>
@@ -105,7 +109,7 @@ const FormArticles = props => {
         }
         .cont-banner {
           width: 100%;
-          height: 12rem;
+          height: 15rem;
           position: relative;
           cursor: pointer;
         }
