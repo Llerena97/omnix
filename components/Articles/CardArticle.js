@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment'
 
 const CardArticle = props => {
   const {data} = props
@@ -8,6 +9,7 @@ const CardArticle = props => {
         <img src={data.image} />
         <div className="cont-info">
           <h5>{data.title}</h5>
+          <span>{moment(data.created_at).locale('es').fromNow()}</span>
           <p>{data.shortDescription}</p>
           <a href={`/articles/${data._id}`}>Ver Articulo</a>
         </div>
@@ -44,7 +46,7 @@ const CardArticle = props => {
           font-weight: 600;
           color: #fff;
         }
-        .cont-info p {
+        .cont-info p, .cont-info span {
           font-family: Nunito;
           color: #fff;
         }

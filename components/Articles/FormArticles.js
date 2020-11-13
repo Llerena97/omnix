@@ -66,7 +66,7 @@ const FormArticles = props => {
   return (
     <>
       <div className="main">
-        <h3>Nuevo Articulo</h3>
+        <h3>{article ? 'Editar' : 'Nuevo'} Articulo</h3>
         <div className="cont-banner" onClick={() => bannerRef.current.click()}>
           <img src={bannerImg ? bannerImg : bannerTmp} className="banner-tmp" />
           {bannerImg ? <img src={iconCamera} className="camera-tmp" /> : null}
@@ -86,7 +86,7 @@ const FormArticles = props => {
             <textarea rows="5" value={largeDescription} onChange={e => setLargeDescription(e.target.value)}></textarea>
           </div>
         </div>
-        <button onClick={() => submit()}>Guardar Articulo</button>
+        <button onClick={() => submit()}>{article ? 'Actualizar' : 'Guardar'} Articulo</button>
       </div>
       <style jsx>{`
         .main {

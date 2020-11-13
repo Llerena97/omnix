@@ -1,5 +1,6 @@
 import React from 'react';
 import ArticleButton from './../Shared/ArticleButton'
+import moment from 'moment'
 
 const ShowArticle = (props) => {
   const {article} = props
@@ -8,6 +9,7 @@ const ShowArticle = (props) => {
       <div className="main">
         <img src={article.image} />
         <h3>{article.title}</h3>
+        <span>{moment(article.created_at).locale('es').fromNow()}</span>
         <p>{article.largeDescription}</p>
         <div className="cont-edit">
           <ArticleButton article={article._id} />
@@ -39,6 +41,11 @@ const ShowArticle = (props) => {
           font-family: Nunito;
           font-size: 1rem;
           text-align: left;
+        }
+        .main span {
+          color: #fff;
+          font-family: Nunito;
+          font-size: 1rem;
         }
         .cont-edit {
           display: flex;
