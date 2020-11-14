@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL = 'http://localhost:4000';
+const API_URL = 'https://stark-gorge-31321.herokuapp.com';
 
 export function allArticles(params, token) {
   return axios({
