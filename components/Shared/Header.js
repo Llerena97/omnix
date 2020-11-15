@@ -1,4 +1,5 @@
 import React from 'react'
+import {logout} from './../../lib/auth'
 
 const Header = () => {
   return (
@@ -11,6 +12,7 @@ const Header = () => {
           <ul>
             <li><a href="/home">Inicio</a></li>
             <li><a href="/articles">Articulos</a></li>
+            <li><a href="#" onClick={() => logout()}>Salir</a></li>
           </ul>
         </div>
       </nav>
