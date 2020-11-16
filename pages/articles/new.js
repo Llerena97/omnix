@@ -5,6 +5,7 @@ import FormArticles from '../../components/Articles/FormArticles';
 import { withAuthSync } from './../../lib/auth';
 
 const NewArticle = withAuthSync(props => {
+  const {token} = props
   return (
     <>
       <Head>
@@ -12,7 +13,7 @@ const NewArticle = withAuthSync(props => {
       </Head>
       <div className="main">
         <Header />
-        <FormArticles />
+        <FormArticles token={token}/>
       </div>
       <style jsx>{`
         :global(body) {
