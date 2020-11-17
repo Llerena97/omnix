@@ -10,7 +10,7 @@ const BodyHome = props => {
     <>
       <div className="main">
         <h5>Ultimos Articulos</h5>
-        <div style={{width: '80%', height: '70%'}}>
+        <div className="cont-carousel">
           <Swiper
             pagination={{ clickable: true }}
             spaceBetween={500}
@@ -21,7 +21,7 @@ const BodyHome = props => {
               disableOnInteraction: true
             }}
           >
-            {articles.map(art => <SwiperSlide key={art._id} ><div style={{padding: '2rem 1rem'}}><CardArticle data={art}/></div></SwiperSlide>)}
+            {articles.map(art => <SwiperSlide key={art._id} ><div className="card"><CardArticle data={art}/></div></SwiperSlide>)}
           </Swiper>
         </div>
       </div>
@@ -40,6 +40,24 @@ const BodyHome = props => {
           font-family: Nunito;
           font-size: 2rem;
           font-weight: 600;
+        }
+        .cont-carousel {
+          width: 80%;
+          height: 80%;
+          background: #000;
+        }
+        .card {
+          background: #000;
+          padding: 1rem;
+        }
+        @media screen and (min-width: 1024px) {
+          .cont-carousel {
+            width: 80%;
+            height: 70%;
+          }
+          .card {
+            padding: 1rem;
+          }
         }
       `}</style>
     </>

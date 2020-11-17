@@ -49,6 +49,7 @@ const CardArticle = props => {
         .cont-info p, .cont-info span {
           font-family: Nunito;
           color: #fff;
+          width: 90%;
         }
         .cont-info a {
           font-family: Nunito;
@@ -67,6 +68,9 @@ const CardArticle = props => {
           }
           .cont-info {
             width: 60%;
+          }
+          .cont-info p {
+            width: 98%;
           }
         }
       `}</style>
